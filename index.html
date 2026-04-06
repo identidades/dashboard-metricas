@@ -504,7 +504,7 @@ function renderDashboard(fy="all"){
   $("v-cls").textContent  = fmt(closed);
   $("v-rate").textContent = rate+"%";
   trend("t-tot","u","registros");
-  trend("t-open",open>0?"d":"u",open>0?"requieren atención":"sin pendientes");
+  trend("t-open",open>0?"d":"u",open>0?"En Proceso":"sin pendientes");
   trend("t-cls","u","resueltos");
   trend("t-rate",rate>=70?"u":"d",rate>=70?"buena resolución":"revisar procesos");
   document.querySelectorAll(".kc").forEach((c,i)=>setTimeout(()=>c.classList.add("vis"),i*80));
