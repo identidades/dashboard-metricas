@@ -503,10 +503,10 @@ function renderDashboard(fy="all"){
   $("v-open").textContent = fmt(open);
   $("v-cls").textContent  = fmt(closed);
   $("v-rate").textContent = rate+"%";
-  trend("t-tot","u","registros");
-  trend("t-open",open>0?"d":"u",open>0?"En Proceso":"sin pendientes");
-  trend("t-cls","u","resueltos");
-  trend("t-rate",rate>=70?"u":"d",rate>=70?"buena resolución":"revisar procesos");
+  trend("t-tot","u","Registros");
+  trend("t-open",open>0?"d":"u",open>0?"En Proceso":"Sin Pendientes");
+  trend("t-cls","u","Resueltos");
+  trend("t-rate",rate>=70?"u":"d",rate>=70?"% de Resolución":"% de Resolución");
   document.querySelectorAll(".kc").forEach((c,i)=>setTimeout(()=>c.classList.add("vis"),i*80));
 
   // ── Barras por mes ──
