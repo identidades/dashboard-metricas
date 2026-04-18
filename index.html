@@ -212,7 +212,7 @@ select#yf:focus{border-color:var(--b5);outline:none}
  <!--
       <div class="ordv">o</div>
       <button class="bdemo" onclick="loadDemo()">Ver con datos de demostración</button>
-      -->
+-->
       <div id="perr"></div>
 
     </div>
@@ -305,8 +305,8 @@ select#yf:focus{border-color:var(--b5);outline:none}
 <div class="cc" id="cc7" style="margin-bottom:1.25rem">
   <div class="cch">
     <div>
-      <div class="cct">Cumplimiento de Actividades Programadas</div>
-      <div class="ccs">Resultado de Actividades Programadas</div>
+      <div class="cct">Cumplimiento de Actividades</div>
+      <div class="ccs">Resultado de Actividades</div>
     </div>
     <span class="badge bg">IDENTIDAD Y ACCESOS</span>
   </div>
@@ -343,12 +343,16 @@ const CFG = {
   // Tipos de solicitud que van en la tabla de cumplimiento (exactamente como aparecen en el Excel)
   COMPLIANCE_TYPES: [
     "Reporte de Bajas",
-    "Evaluaciones APPCONTROL",
+    "Bloqueo en APPCONTROL",
     "Reporte de contraseñas",
     "Actualización de puestos",
     "Actualización de tableros",
     "Accesos privilegiados no justificados",
-    "Escaneo de software no permitido"
+    "Escaneo de software no permitido",
+    "Evaluación de permisos",
+    "Identidades con Privilegios Mínimos",
+    "Controles y medidas en la gestión de Identidad y Acesos", 
+    "Rotación automática de contraseñas privilegiadas"
   ],
 
   // Estados que cuentan como 100% de cumplimiento
@@ -503,10 +507,10 @@ function renderDashboard(fy="all"){
   $("v-open").textContent = fmt(open);
   $("v-cls").textContent  = fmt(closed);
   $("v-rate").textContent = rate+"%";
-  trend("t-tot","u","Registros");
-  trend("t-open",open>0?"d":"u",open>0?"En Proceso":"Sin Pendientes");
-  trend("t-cls","u","Resueltos");
-  trend("t-rate",rate>=70?"u":"d",rate>=70?"% de Resolución":"% de Resolución");
+  trend("t-tot","u","registros");
+  trend("t-open",open>0?"d":"u",open>0?"requieren atención":"sin pendientes");
+  trend("t-cls","u","resueltos");
+  trend("t-rate",rate>=70?"u":"d",rate>=70?"buena resolución":"revisar procesos");
   document.querySelectorAll(".kc").forEach((c,i)=>setTimeout(()=>c.classList.add("vis"),i*80));
 
   // ── Barras por mes ──
